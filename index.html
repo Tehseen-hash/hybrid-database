@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIS-DBaaS – Hybrid Intelligent & Secure Database-as-a-Service Framework</title>
+  <meta name="description" content="HIS-DBaaS: Predictive AI Orchestration with Hardware-Accelerated Zero-Trust Security for multi-tenant cloud databases." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">HIS-DB<span class="accent">aaS</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#dataflow">Data Flow</a></li>
+      <li><a href="#performance">Performance</a></li>
+      <li><a href="#orchestration">Orchestration</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#dashboard">Dashboard</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle">&#9776;</button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="hero-section">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">Research Prototype v2.1</div>
+      <h1 class="hero-title">Hybrid Intelligent &amp; Secure<br/><span class="accent">DBaaS Framework</span></h1>
+      <p class="hero-subtitle">Predictive AI Orchestration with Hardware-Accelerated<br/>Zero-Trust Security for Multi-Tenant Cloud Databases</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-val" data-target="85">0</span><span>%</span><div class="stat-label">Latency Reduction</div></div>
+        <div class="stat"><span class="stat-val" data-target="71">0</span><span>%</span><div class="stat-label">Migration Reduction</div></div>
+        <div class="stat"><span class="stat-val" data-target="99">0</span><span>%</span><div class="stat-label">SLA Compliance</div></div>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn-primary" id="startSimBtn">▶ Start Simulation</button>
+        <button class="btn-outline" onclick="document.getElementById('architecture').scrollIntoView({behavior:'smooth'})">View Architecture</button>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">↓ Scroll to explore</div>
+  </section>
+
+  <!-- ARCHITECTURE -->
+  <section id="architecture" class="section">
+    <div class="section-header">
+      <div class="section-tag">System Design</div>
+      <h2>Layered Architecture</h2>
+      <p>Five-layer security and intelligence stack with end-to-end encryption and AI-driven orchestration</p>
+    </div>
+    <div class="arch-container">
+      <svg id="archSvg" viewBox="0 0 900 620" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="arch-legend">
+        <div class="legend-item"><span class="dot dot-tenant"></span>Tenant Layer</div>
+        <div class="legend-item"><span class="dot dot-nic"></span>SmartNIC/DPU</div>
+        <div class="legend-item"><span class="dot dot-ai"></span>AI Orchestration</div>
+        <div class="legend-item"><span class="dot dot-tee"></span>TEE Enclave</div>
+        <div class="legend-item"><span class="dot dot-db"></span>DB Cluster</div>
+      </div>
+    </div>
+    <div class="arch-cards">
+      <div class="arch-card" data-layer="tenant">
+        <div class="arch-card-icon">🏢</div>
+        <h3>Tenant Application Layer</h3>
+        <p>Multi-tenant query entry point. Enforces tenant isolation, API authentication, and request routing to secure pipeline.</p>
+        <div class="arch-tags"><span>RBAC</span><span>API Gateway</span><span>TLS 1.3</span></div>
+      </div>
+      <div class="arch-card" data-layer="nic">
+        <div class="arch-card-icon">⚡</div>
+        <h3>SmartNIC / DPU Engine</h3>
+        <p>Hardware-offloaded ABAC policy evaluation at line-rate. Eliminates CPU bottleneck with dedicated security silicon.</p>
+        <div class="arch-tags"><span>ABAC</span><span>Line-Rate</span><span>Zero-Trust</span></div>
+      </div>
+      <div class="arch-card" data-layer="ai">
+        <div class="arch-card-icon">🧠</div>
+        <h3>AI Orchestration (LSTM)</h3>
+        <p>LSTM neural network predicts demand spikes 30–120s ahead. Triggers proactive live migration before overload occurs.</p>
+        <div class="arch-tags"><span>LSTM</span><span>Proactive</span><span>Forecasting</span></div>
+      </div>
+      <div class="arch-card" data-layer="tee">
+        <div class="arch-card-icon">🔐</div>
+        <h3>Trusted Execution Env.</h3>
+        <p>Intel SGX / AMD SEV enclave processes encrypted queries in isolated memory. Keys never leave the TEE boundary.</p>
+        <div class="arch-tags"><span>SGX/SEV</span><span>Encrypted</span><span>Isolated</span></div>
+      </div>
+      <div class="arch-card" data-layer="db">
+        <div class="arch-card-icon">🗄️</div>
+        <h3>Physical DB Cluster</h3>
+        <p>Distributed PostgreSQL/MySQL cluster with NVMe storage. Live migration preserves consistency during rebalancing.</p>
+        <div class="arch-tags"><span>Distributed</span><span>NVMe</span><span>Live Migrate</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA FLOW -->
+  <section id="dataflow" class="section section-dark">
+    <div class="section-header">
+      <div class="section-tag">End-to-End Flow</div>
+      <h2>Detailed Data Flow Execution</h2>
+      <p>Unified query path and proactive AI orchestration based on the HIS-DBaaS architecture</p>
+    </div>
+    <div class="detailed-flow-wrapper">
+      <svg id="unifiedFlowSvg" viewBox="0 0 950 1100" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+  </section>
+
+  <!-- PERFORMANCE -->
+  <section id="performance" class="section">
+    <div class="section-header">
+      <div class="section-tag">Analytics</div>
+      <h2>Performance Analytics</h2>
+      <p>Real-time latency comparison and migration reduction metrics</p>
+    </div>
+    <div class="perf-grid">
+      <div class="perf-card">
+        <h3>Query Latency Comparison</h3>
+        <div class="latency-table">
+          <div class="lt-header"><span>Operation</span><span>Software ABAC</span><span>HIS-DBaaS DPU</span><span>Reduction</span></div>
+          <div class="lt-row" data-sw="8.2" data-hw="1.2" data-op="SELECT">
+            <span>SELECT</span><span class="sw-val">8.2ms</span><span class="hw-val">1.2ms</span><span class="red-val accent">—</span>
+          </div>
+          <div class="lt-row" data-sw="7.5" data-hw="3.0" data-op="JOIN">
+            <span>JOIN</span><span class="sw-val">7.5ms</span><span class="hw-val">3.0ms</span><span class="red-val accent">—</span>
+          </div>
+          <div class="lt-row" data-sw="8.8" data-hw="3.6" data-op="UPDATE">
+            <span>UPDATE</span><span class="sw-val">8.8ms</span><span class="hw-val">3.6ms</span><span class="red-val accent">—</span>
+          </div>
+        </div>
+        <canvas id="latencyChart" height="180"></canvas>
+      </div>
+      <div class="perf-card">
+        <h3>Migration Reduction</h3>
+        <div class="migration-stats">
+          <div class="mig-item">
+            <div class="mig-label">Baseline Moves</div>
+            <div class="mig-bar-wrap"><div class="mig-bar" style="width:100%;background:#e74c3c;"></div></div>
+            <div class="mig-num">41</div>
+          </div>
+          <div class="mig-item">
+            <div class="mig-label">HIS-DBaaS Moves</div>
+            <div class="mig-bar-wrap"><div class="mig-bar" style="width:29%;background:#00d4ff;"></div></div>
+            <div class="mig-num accent">12</div>
+          </div>
+        </div>
+        <div class="mig-scores">
+          <div class="score-circle" id="migScore">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="#1a2a4a" stroke-width="8"/><circle class="score-ring" cx="40" cy="40" r="34" fill="none" stroke="#00d4ff" stroke-width="8" stroke-dasharray="213.6" stroke-dashoffset="213.6" stroke-linecap="round" transform="rotate(-90 40 40)"/></svg>
+            <div class="score-val">0%</div>
+            <div class="score-lbl">Migration<br/>Reduction</div>
+          </div>
+          <div class="score-circle" id="stabScore">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="#1a2a4a" stroke-width="8"/><circle class="score-ring" cx="40" cy="40" r="34" fill="none" stroke="#4ade80" stroke-width="8" stroke-dasharray="213.6" stroke-dashoffset="213.6" stroke-linecap="round" transform="rotate(-90 40 40)"/></svg>
+            <div class="score-val">0%</div>
+            <div class="score-lbl">Cluster<br/>Stability</div>
+          </div>
+          <div class="score-circle" id="effScore">
+            <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="34" fill="none" stroke="#1a2a4a" stroke-width="8"/><circle class="score-ring" cx="40" cy="40" r="34" fill="none" stroke="#a78bfa" stroke-width="8" stroke-dasharray="213.6" stroke-dashoffset="213.6" stroke-linecap="round" transform="rotate(-90 40 40)"/></svg>
+            <div class="score-val">0%</div>
+            <div class="score-lbl">Efficiency<br/>Score</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="avg-summary">
+      <div class="avg-card"><div class="avg-icon">⏱️</div><div class="avg-val" id="avgSw">—</div><div class="avg-lbl">Avg SW Latency</div></div>
+      <div class="avg-card"><div class="avg-icon">⚡</div><div class="avg-val" id="avgHw">—</div><div class="avg-lbl">Avg HW Latency</div></div>
+      <div class="avg-card"><div class="avg-icon">📉</div><div class="avg-val" id="avgRed">—</div><div class="avg-lbl">Avg Reduction</div></div>
+      <div class="avg-card"><div class="avg-icon">🚀</div><div class="avg-val" id="speedRatio">—</div><div class="avg-lbl">Speed-Up Ratio</div></div>
+    </div>
+  </section>
+
+  <!-- ORCHESTRATION -->
+  <section id="orchestration" class="section section-dark">
+    <div class="section-header">
+      <div class="section-tag">AI Engine</div>
+      <h2>AI Orchestration Simulation</h2>
+      <p>Live LSTM telemetry prediction and proactive cluster migration</p>
+    </div>
+    <div class="orch-grid">
+      <div class="orch-panel">
+        <h3>Live Cluster Telemetry</h3>
+        <div class="telemetry-meters">
+          <div class="meter-row">
+            <span>CPU</span>
+            <div class="meter-bar"><div class="meter-fill cpu-fill" id="cpuFill"></div></div>
+            <span class="meter-pct" id="cpuPct">0%</span>
+          </div>
+          <div class="meter-row">
+            <span>Memory</span>
+            <div class="meter-bar"><div class="meter-fill mem-fill" id="memFill"></div></div>
+            <span class="meter-pct" id="memPct">0%</span>
+          </div>
+          <div class="meter-row">
+            <span>I/O</span>
+            <div class="meter-bar"><div class="meter-fill io-fill" id="ioFill"></div></div>
+            <span class="meter-pct" id="ioPct">0%</span>
+          </div>
+          <div class="meter-row">
+            <span>Network</span>
+            <div class="meter-bar"><div class="meter-fill net-fill" id="netFill"></div></div>
+            <span class="meter-pct" id="netPct">0%</span>
+          </div>
+        </div>
+        <canvas id="telemetryChart" height="160"></canvas>
+      </div>
+      <div class="orch-panel">
+        <h3>LSTM Prediction Engine</h3>
+        <div class="lstm-display">
+          <div class="lstm-status" id="lstmStatus">
+            <div class="lstm-dot"></div>
+            <span>Monitoring...</span>
+          </div>
+          <canvas id="lstmChart" height="160"></canvas>
+          <div class="lstm-alerts" id="lstmAlerts"></div>
+        </div>
+      </div>
+      <div class="orch-panel">
+        <h3>Node Migration Status</h3>
+        <div class="node-grid" id="nodeGrid">
+          <!-- nodes rendered by JS -->
+        </div>
+        <div class="migration-log" id="migLog"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section id="security" class="section">
+    <div class="section-header">
+      <div class="section-tag">Zero-Trust</div>
+      <h2>Security Architecture</h2>
+      <p>Hardware DPU offloading vs traditional software ABAC comparison</p>
+    </div>
+    <div class="sec-compare">
+      <div class="sec-card sec-bad">
+        <div class="sec-badge bad">Traditional Software ABAC</div>
+        <div class="sec-diagram" id="swAbacDiagram">
+          <div class="sec-node">Query In</div>
+          <div class="sec-arrow">↓</div>
+          <div class="sec-node bottleneck">CPU ABAC (Bottleneck)</div>
+          <div class="cpu-anim" id="cpuAnim">
+            <div class="cpu-bar"></div><div class="cpu-bar"></div><div class="cpu-bar"></div><div class="cpu-bar"></div>
+          </div>
+          <div class="sec-arrow">↓ <span class="lat-badge bad">~8ms</span></div>
+          <div class="sec-node">Query Forwarded</div>
+        </div>
+        <ul class="sec-cons">
+          <li>❌ CPU cycles consumed for auth</li>
+          <li>❌ 7.5–8.8ms per query overhead</li>
+          <li>❌ Bottleneck under high concurrency</li>
+          <li>❌ Shared CPU context with workload</li>
+        </ul>
+      </div>
+      <div class="sec-card sec-good">
+        <div class="sec-badge good">HIS-DBaaS DPU Hardware</div>
+        <div class="sec-diagram" id="hwAbacDiagram">
+          <div class="sec-node">Query In</div>
+          <div class="sec-arrow">↓</div>
+          <div class="sec-node dpu-node">SmartNIC DPU (Line-Rate)</div>
+          <div class="dpu-anim" id="dpuAnim">
+            <div class="dpu-packet"></div>
+            <div class="dpu-packet"></div>
+            <div class="dpu-packet"></div>
+          </div>
+          <div class="sec-arrow">↓ <span class="lat-badge good">~1.2ms</span></div>
+          <div class="sec-node">TEE Enclave</div>
+        </div>
+        <ul class="sec-pros">
+          <li>✅ Zero CPU overhead for ABAC</li>
+          <li>✅ 1.2–3.6ms hardware-accelerated</li>
+          <li>✅ Line-rate policy evaluation</li>
+          <li>✅ Dedicated security silicon</li>
+        </ul>
+      </div>
+    </div>
+    <div class="zt-workflow">
+      <h3>Zero-Trust Workflow</h3>
+      <div class="zt-steps">
+        <div class="zt-step"><div class="zt-num">1</div><div class="zt-text">Never Trust by Default</div></div>
+        <div class="zt-conn"></div>
+        <div class="zt-step"><div class="zt-num">2</div><div class="zt-text">Always Verify Identity</div></div>
+        <div class="zt-conn"></div>
+        <div class="zt-step"><div class="zt-num">3</div><div class="zt-text">Hardware ABAC Eval</div></div>
+        <div class="zt-conn"></div>
+        <div class="zt-step"><div class="zt-num">4</div><div class="zt-text">TEE Secure Execute</div></div>
+        <div class="zt-conn"></div>
+        <div class="zt-step"><div class="zt-num">5</div><div class="zt-text">Encrypted Response</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="section section-dark">
+    <div class="section-header">
+      <div class="section-tag">KPI Dashboard</div>
+      <h2>Results &amp; Analytics</h2>
+      <p>Live performance indicators across all system dimensions</p>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-icon">⚡</div><div class="kpi-val" id="kpiLatency">0ms</div><div class="kpi-label">Avg Query Latency</div><div class="kpi-trend up">↑ 85% faster</div></div>
+      <div class="kpi-card"><div class="kpi-icon">⚖️</div><div class="kpi-val" id="kpiStab">0%</div><div class="kpi-label">Cluster Stability</div><div class="kpi-trend up">↑ 71% reduction</div></div>
+      <div class="kpi-card"><div class="kpi-icon">🔐</div><div class="kpi-val" id="kpiSec">0%</div><div class="kpi-label">Security Score</div><div class="kpi-trend up">↑ HW enforced</div></div>
+      <div class="kpi-card"><div class="kpi-icon">📊</div><div class="kpi-val" id="kpiSLA">0%</div><div class="kpi-label">SLA Compliance</div><div class="kpi-trend up">↑ Proactive AI</div></div>
+      <div class="kpi-card"><div class="kpi-icon">🚀</div><div class="kpi-val" id="kpiScale">0</div><div class="kpi-label">Active Nodes</div><div class="kpi-trend up">↑ Auto-scaled</div></div>
+      <div class="kpi-card"><div class="kpi-icon">🧠</div><div class="kpi-val" id="kpiPred">0%</div><div class="kpi-label">LSTM Accuracy</div><div class="kpi-trend up">↑ 30s ahead</div></div>
+    </div>
+    <div class="qps-section">
+      <h3>Live Query Throughput (QPS)</h3>
+      <canvas id="qpsChart" height="200"></canvas>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">HIS-DB<span class="accent">aaS</span></div>
+      <p>Hybrid Intelligent &amp; Secure Database-as-a-Service Framework</p>
+      <p class="footer-sub">Research Prototype · AI Orchestration · Zero-Trust Security · Multi-Tenant DBaaS</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
