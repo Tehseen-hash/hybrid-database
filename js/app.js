@@ -504,7 +504,7 @@ async function updateTelemetry() {
   const t = STATE.tick;
 
   try {
-    const res = await fetch(`http://localhost:5000/api/telemetry?tick=${t}`);
+    const res = await fetch(`/api/telemetry?tick=${t}`);
     if (!res.ok) throw new Error('API error');
     const data = await res.json();
     
